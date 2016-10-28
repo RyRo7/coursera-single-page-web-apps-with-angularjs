@@ -1,0 +1,21 @@
+How to start the browser-sync before development
+
+navigate to the project path
+start the browser-sync and leave it to run
+
+F:\>cd Documents\WS\coursera-test
+
+F:\Documents\WS\coursera-test>browser-sync start --server --directory --files "**/*"
+[BS] Access URLs:
+ -----------------------------------
+       Local: http://localhost:3000
+    External: http://10.1.85.87:3000
+ -----------------------------------
+          UI: http://localhost:3001
+ UI External: http://10.1.85.87:3001
+ -----------------------------------
+[BS] Serving files from: ./
+[BS] Watching files...
+[BS] File changed: lecture02\index.html
+[BS] File changed: lecture02\app.js
+[BS] File changed: lecture02\app.js
