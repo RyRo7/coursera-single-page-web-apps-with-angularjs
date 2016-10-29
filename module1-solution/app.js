@@ -25,7 +25,7 @@ function LunchCheckController($scope) {
     if (size < 3) {
       response = "Still good. Keep adding to the food pile!";
     } else if (size == 3) {
-      response = "At the limit for what your plate can hold. Best not to add anymore";
+      response = "At the limit for what your plate can hold. Best not to add any more";
     } else if (size > 3) {
       response = "Woah there tubby! Got quite a plate full there - put something back!";
     }
