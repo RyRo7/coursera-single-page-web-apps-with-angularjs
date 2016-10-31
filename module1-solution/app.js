@@ -7,11 +7,13 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
   $scope.lunchMenu = "";
   $scope.checkLunchMessage = "";
+  $scope.borderstyle = "";
 
   $scope.CheckLunch = function() {
     if ($scope.lunchMenu == "") {
       $scope.checkLunchMessage = "Please enter data first";
-      $scope.colour = "color:red";
+      $scope.colour = "red";
+      $scope.bordercolour = "solid 2px red";
     } else {
       var findThis = /,\s*,/g;
       //the flag g=global match; find all matches rather than stopping after the first match
@@ -20,6 +22,7 @@ function LunchCheckController($scope) {
       //split iterates through lunch list and creates the array of lunch items
       var lunchList = $scope.lunchMenu.replace(findThis, ',').split(',');
       $scope.checkLunchMessage = checkLunchSize(lunchList.length);
+      $scope.bordercolour = "solid 2px green";
     }
   }
 
@@ -30,11 +33,11 @@ function LunchCheckController($scope) {
       case 2:
       case 3:
         response = "Enjoy!";
-        $scope.colour = "color:green";
+        $scope.colour = "green";
         break;
       default:
         response = "Too Much!";
-        $scope.colour = "color:red";
+        $scope.colour = "red";
         break;
     }
     return response;
