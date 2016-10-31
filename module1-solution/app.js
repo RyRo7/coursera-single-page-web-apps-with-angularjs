@@ -16,7 +16,11 @@ function LunchCheckController($scope) {
     //split iterates through lunch list and creates the array of lunch items
     var lunchList = $scope.lunchMenu.replace(findThis, ',').split(',');
     console.log(lunchList);
-    $scope.checkLunchMessage = checkLunchSize(lunchList.length);
+    if (lunchList == null) {
+      $scope.checkLunchMessage = "Please enter data first!";
+    } else {
+      $scope.checkLunchMessage = checkLunchSize(lunchList.length);
+    }
   }
 
   function checkLunchSize(size) {
@@ -38,7 +42,7 @@ function LunchCheckController($scope) {
         response = "Woah there tubby! Got quite a plate full there - put something back!";
         break;
     }
-    
+
     return response;
   }
 }
