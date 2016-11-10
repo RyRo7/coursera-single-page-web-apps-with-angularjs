@@ -1,0 +1,99 @@
+h1 {
+  margin-bottom: 30px;
+}
+input[type="text"] {
+  width: 200px;
+  float: left;
+}
+.narrow-button {
+  float: left;
+  margin-left: 10px;
+}
+.loader {
+  display: none;
+  margin-left: 5px;
+  font-size: 10px;
+  float: left;
+  border-top: 1.1em solid rgba(147, 147, 147, 0.2);
+  border-right: 1.1em solid rgba(147, 147, 147, 0.2);
+  border-bottom: 1.1em solid rgba(147, 147, 147, 0.2);
+  border-left: 1.1em solid #676767;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.error {
+  color: red;
+  font-size: 2em;
+  font-weight: 600;
+}
+.myTableStyle {
+  margin: 1em 0;
+  width: 100%;
+  overflow: hidden;
+  background: #FFF;
+  border-radius: 10px;
+  border: 1px solid #167F92;
+}
+.myTableStyle tr {
+  border: 1px solid #D9E4E6;
+}
+.myTableStyle tr:nth-child(odd) {
+  background-color: #EAF3F3;
+}
+.myTableStyle th {
+  display: none;
+  border: 1px solid #2e6da4;
+  background-color: #337ab7;
+  color: #FFF;
+  padding: 1em;
+  display: table-cell;
+  text-align: left;
+  font-weight: 400;
+}
+.myTableStyle td {
+  display: block;
+  word-wrap: break-word;
+  max-width: 7em;
+}
+
+@media (min-width: 480px) {
+  .myTableStyle td {
+    border: 1px solid #D9E4E6;
+  }
+}
+
+@media (min-width: 480px) {
+  .myTableStyle th, .myTableStyle td {
+    display: table-cell;
+    padding: 1em;
+  }
+}

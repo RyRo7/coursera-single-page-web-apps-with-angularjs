@@ -1,0 +1,17 @@
+<table class="myTableStyle" ng-if="list.items.length > 0">
+  <thead>
+    <tr>
+        <th width="5%">Short Name</th>
+        <th width="28%">Name</th>
+        <th width="43%">Description</th>
+        <th width="14%">Remove from list</th>
+    </tr>
+  </thead>
+  <tr ng-repeat="item in list.items">
+    <td class="shortname">{{ item.short_name }}
+    <td class="name">{{ item.name }}
+    <td class="description">{{ item.description }}
+    <td class="remove"><button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+  </tr>
+</table>
+<br><br><br><div ng-if="list.items.length == 0" class="error">Nothing found</div>
