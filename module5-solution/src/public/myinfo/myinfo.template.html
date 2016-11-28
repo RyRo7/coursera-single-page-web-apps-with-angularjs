@@ -26,37 +26,11 @@
                 <div class="col-md-8">{{ $ctrl.getUserInfo().phone }}</div>
               </div>
               <div class="row">
-                <div class="menu-item-tile col-md-12">
-                  <hr class="visible-xs">
-
-                  <!-- <menu-item ng-repeat="menuItem in $ctrl.menuItem"
-                             menu-item="menuItem">
-                  </menu-item> -->
-
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <div class="menu-item-photo">
-                              <div>
-                                  <h2>Your favourite dish</h2>
-                                  {{$ctrl.getUserInfo().favouriteDish.short_name}}
-                              </div>
-                              <img class="img-responsive" width="250" height="150"
-                                  ng-src="{{$ctrl.basePath}}/images/{{$$ctrl.getUserInfo().dish}}.jpg"
-                                  alt="{{$ctrl.getUserDish().name}}">
-                                  image goes here
-                            </div>
-                            <div class="menu-item-price">
-                                {{$ctrl.getUserInfo().favouriteDish.price_small | currency}}
-                                <span> {{$ctrl.getUserInfo().favouriteDish.small_portion_name}}</span>
-                                {{$ctrl.getUserInfo().favouriteDish.price_large | currency}}
-                                <span>{{$ctrl.getUserInfo().favouriteDish.large_portion_name}}</span>
-                              </div>
-                          </div>
-                          <div class="menu-item-description col-sm-7">
-                            <h3 class="menu-item-title">{{$ctrl.getUserInfo().favouriteDish.name}}</h3>
-                            <p class="menu-item-details">{{$ctrl.getUserInfo().favouriteDish.description}}</p>
-                          </div>
-                        </div>
+                <div class="col-xs-3 grid-label">Your favourite dish</div>
+                <div class="col-md-9">
+                  <menu-item ng-repeat="favouriteDish in $ctrl.getUserInfo()"
+                             menu-item="favouriteDish">
+                  </menu-item>
 
                 </div>
               </div>

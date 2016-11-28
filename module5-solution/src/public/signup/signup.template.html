@@ -15,7 +15,7 @@
           </span>
           <br>
 
-          <!-- <input type="text" name="lastname" placeholder="Lastname" class="form-control"
+          <input type="text" name="lastname" placeholder="Lastname" class="form-control"
               ng-model="signUpCtrl.userdata.lastname"
               required>
               <span
@@ -38,7 +38,7 @@
             <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
               Phone must be in the format ###-###-####.
             </span>
-            <br> -->
+            <br>
 
             <input type="dish" name="dish" placeholder="Your Favourite dish on our menu" class="form-control"
               ng-model="signUpCtrl.userdata.dish"
@@ -51,6 +51,7 @@
             <button type="button" class="btn btn-md btn-primary"
                     ng-disabled="regForm.$invalid" ng-click="signUpCtrl.submit()">
                     Submit</button>
+                    <br>
             <span ng-if="signUpCtrl.isSignedUp()">
               User data is saved. (this is where a redirect would normally be)
             </span>
