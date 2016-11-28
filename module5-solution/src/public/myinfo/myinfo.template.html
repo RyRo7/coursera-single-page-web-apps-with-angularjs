@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 class="text-center">User Information</h2>
+    <div ng-if="!myInfoCtrl.isSignedUp()">
+      Not Signed Up Yet.
+      <a ui-sref="signup" href="#/signup">Sign up Now!</a>
+    </div>
+    <div ng-if="myInfoCtrl.isSignedUp()" class="ng-scope">
+      <my-info></my-info>
+    </div>
+</div>
