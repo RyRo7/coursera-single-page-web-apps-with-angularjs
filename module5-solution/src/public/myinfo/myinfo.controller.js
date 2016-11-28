@@ -4,19 +4,18 @@
 angular.module('public')
 .controller('MyInfoController', MyInfoController);
 
-MyInfoController.$inject = ['UserInfoService', 'myInfo'];
-function MyInfoController(UserInfoService, myInfo) {
+MyInfoController.$inject = ['UserInfoService', 'ApiPath'];
+function MyInfoController(UserInfoService, ApiPath) {
   var $ctrl = this;
+  $ctrl.basePath = ApiPath;  
 
   $ctrl.getUserInfo = function () {
-    console.log("MyInfoController :: $ctrl.submit");
     return UserInfoService.getUserFromPsuedoDatabase();
   };
 
   $ctrl.isSignedUp = function () {
     return UserInfoService.isUserSignedUp;
   };
-
 }
 
 })();

@@ -10,12 +10,21 @@ function SignUpController(UserInfoService, MenuService) {
   $ctrl.userdata = {};
 
   $ctrl.submit = function () {
-    UserInfoService.addUserToPsuedoDatabase($ctrl.userdata);
+    MenuService.getMenuItem($ctrl.userdata.dish)
+     .then(
+       function (response) {
+          $ctrl.userdata.favouriteDish = response;
+          console.log("*** adding this to the service:", $ctrl.userdata);
+          UserInfoService.addUserToPsuedoDatabase($ctrl.userdata);
+        }
+      );
   };
 
   $ctrl.isSignedUp = function () {
     return UserInfoService.isUserSignedUp;
   };
+
+
 }
 
 })();
