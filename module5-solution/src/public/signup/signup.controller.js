@@ -14,7 +14,6 @@ function SignUpController(UserInfoService, MenuService) {
      .then(
        function (response) {
           $ctrl.userdata.favouriteDish = response;
-          console.log("*** adding this to the service:", $ctrl.userdata);
           UserInfoService.addUserToPsuedoDatabase($ctrl.userdata);
         }
       );
