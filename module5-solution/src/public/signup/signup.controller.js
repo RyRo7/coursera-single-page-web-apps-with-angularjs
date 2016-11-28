@@ -8,7 +8,7 @@ SignUpController.$inject = ['UserInfoService', 'MenuService'];
 function SignUpController(UserInfoService, MenuService) {
   var $ctrl = this;
   $ctrl.userdata = {};
-  $ctrl.isDishNotValid = true;
+  var validDish = false;
 
   $ctrl.submit = function () {
     MenuService.getMenuItem($ctrl.userdata.dish)
@@ -16,11 +16,19 @@ function SignUpController(UserInfoService, MenuService) {
        function (response) {
          if (response){
             $ctrl.userdata.favouriteDish = response;
-            $ctrl.isDishNotValid = false;
+            validDish = false;
             UserInfoService.addUserToPsuedoDatabase($ctrl.userdata);
           }
         }
-      );
+      )
+      .catch(function (error) {
+        console.log("Something went wrong");
+        validDish = true;
+      });
+  };
+
+  $ctrl.isDishNotValid = function () {
+    return validDish;
   };
 
   $ctrl.isSignedUp = function () {
