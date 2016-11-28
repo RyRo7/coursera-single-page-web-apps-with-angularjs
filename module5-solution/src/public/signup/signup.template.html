@@ -47,8 +47,11 @@
             <input type="dish" name="dish" placeholder="Your favourite dish on our menu" class="form-control"
               ng-model="signUpCtrl.userdata.dish"
               required>
-              <span ng-if="regForm.dish.$invalid && regForm.dish.$touched && signUpCtrl.validDish">
+              <span ng-if="regForm.dish.$invalid && regForm.dish.$touched">
                 Please enter a valid dish in the format (Letter + Number e.g. L1 for Orange Chicken)
+              </span>
+              <span ng-if="signUpCtrl.isDishNotValid">
+                That dish is not on our menu. Please select a different (valid) one.
               </span>
               <br>
 
